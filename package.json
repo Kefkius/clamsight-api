@@ -50,7 +50,7 @@
   "engines": {
     "node": "*"
   },
-  "bin": "insight.js",
+  "bin": "clamsight.js",
   "scripts": {
     "start": "node node_modules/grunt-cli/bin/grunt"
   },
