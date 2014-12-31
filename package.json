@@ -6,7 +6,7 @@
     "name": "Ryan X Charles",
     "email": "ryan@bitpay.com"
   },
-  "repository": "git://github.com/kefkius/clamsight-api.git",
+  "repository": "git://github.com/l0rdicon/clamsight-api.git",
   "contributors": [
     {
       "name": "Matias Alejo Garcia",
@@ -34,9 +34,9 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/kefkius/clamsight-api/issues"
+    "url": "https://github.com/l0rdicon/clamsight-api/issues"
   },
-  "homepage": "https://github.com/kefkius/clamsight-api",
+  "homepage": "https://github.com/l0rdicon/clamsight-api",
   "license": "MIT",
   "keywords": [
     "clamsight",
@@ -61,7 +61,7 @@
     "bitauth": "^0.1.1",
     "bufferput": "git://github.com/bitpay/node-bufferput.git",
     "buffertools": "*",
-    "clamcore": "git://github.com/kefkius/clamcore.git",
+    "clamcore": "git://github.com/l0rdicon/clamcore.git",
     "commander": "^2.3.0",
     "connect-ratelimit": "git://github.com/dharmafly/connect-ratelimit.git#0550eff209c54f35078f46445000797fa942ab97",
     "cron": "^1.0.4",
