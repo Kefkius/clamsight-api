@@ -57,6 +57,10 @@ exports.transaction = function(req, res, next, txid) {
 exports.show = function(req, res) {
 
   if (req.transaction) {
+    // remove null coinstake output
+    if (req.transaction.version == 2 && req.transaction.isStake) {
+      req.transaction.vout.splice(0, 1);
+    }
     res.jsonp(req.transaction);
   }
 };
@@ -115,6 +119,24 @@ exports.list = function(req, res, next) {
         if (err) {
           console.log(err);
           res.status(404).send('TX not found');
+        }
+
+        // remove coinbase tx
+        var coinBaseIndex = -1;
+        for (var i = 0; i < results.length; i++) {
+          if (results[i].version == 2 && results[i].isCoinBase) {
+            coinBaseIndex = i;
+          }
+        }
+        if (coinBaseIndex > -1) {
+          results.splice(coinBaseIndex, 1);
+        }
+
+        // remove null coinstake output
+        for (var i = 0; i < results.length; i++) {
+          if (results[i].isStake) {
+            results[i].vout.splice(0, 1);
+          }
         }
 
         res.jsonp({
